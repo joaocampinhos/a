@@ -45,6 +45,7 @@ GEM
       activesupport (>= 3.0.0)
       multi_json (>= 1.2.0)
     json (1.8.1)
+    kdtree (0.3)
     mail (2.5.4)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
@@ -54,6 +55,7 @@ GEM
     multi_json (1.8.4)
     pg (0.17.1)
     polyglot (0.3.3)
+    proj4rb (0.4.3)
     pry (0.9.12.5)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -125,7 +127,9 @@ PLATFORMS
 DEPENDENCIES
   coffee-rails (~> 4.0.0)
   jbuilder (~> 1.2)
+  kdtree
   pg
+  proj4rb
   pry
   rails (= 4.0.2)
   rspec-rails
