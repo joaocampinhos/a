@@ -1,0 +1,14 @@
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+.leaflet-bar a {
+  background-color: $red;
+  color: #fff;
+}
+
+.leaflet-bar a:hover {
+  background-color: $red-hover;
+  color: #fff;
+}

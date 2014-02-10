@@ -1,0 +1,13 @@
+.sidebar div::-webkit-scrollbar {
+  width: 10px;
+}
+
+.sidebar div::-webkit-scrollbar-thumb {
+  background-color: #C5C6C6;
+  border: 1px solid #1E2426;
+  border-radius: 10px;
+}
+
+.sidebar div::-webkit-scrollbar-button {
+  height: 6px;
+}
