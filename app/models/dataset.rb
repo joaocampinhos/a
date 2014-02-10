@@ -6,4 +6,12 @@ class Dataset < ActiveRecord::Base
     ActiveRecord::Base.connection.execute("select * from #{name}")
   end
 
+  def compute_nni
+    data = get_data()
+    
+  end
+
+
+  
+
 end

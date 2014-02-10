@@ -1,6 +1,6 @@
 module Spacial
 
-  class Viewport
+  class MapViewport
     
   end
 
