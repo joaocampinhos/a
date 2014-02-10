@@ -3,7 +3,7 @@ module Spacial
   class Point    
     EARTH_RADIUS = 6371
 
-    attr_reader :x, :y
+    attr_accessor :x, :y
     alias_method :longitude, :x
     alias_method :latitude, :y
 

@@ -26,21 +26,21 @@ module Spacial
       end
 
       context 'when destination is in the same place' do 
-        it 'should return 0' do 
+        it 'returns 0' do 
           distance = @origin.linear_distance_to(@origin)
           distance.should eq(0)
         end
       end
 
       context 'when destination is Point(5,1)' do 
-        it 'should return Sqrt(13)' do 
+        it 'returns Sqrt(13)' do 
           distance = @origin.linear_distance_to(Point.new(5,1))
           distance.should eq(Math::sqrt(13))
         end
       end
 
       context 'when destination is Point(10,2)' do 
-        it 'should return Sqrt(53)' do 
+        it 'returns Sqrt(53)' do 
           distance = @origin.linear_distance_to(Point.new(10,2))
           distance.should eq(Math::sqrt(53))
         end
@@ -53,21 +53,21 @@ module Spacial
       end
 
       context 'when destination is in the same place' do 
-        it 'should return 0' do 
+        it 'returns 0' do 
           distance = @origin.gps_distance_to(@origin)
           distance.should be_within(0.1).of(0)
         end
       end
 
       context 'when destination is Point(-9.0171, 39.1422)' do 
-        it 'should return 285.2' do 
+        it 'returns 285.2' do 
           distance = @origin.gps_distance_to(Point.new(-9.0171, 39.1422))
           distance.should be_within(0.1).of(285.2)
         end
       end
 
       context 'when destination is Point(-8.0572, 40.7563)' do 
-        it 'should return 113.9' do
+        it 'returns 113.9' do
           distance = @origin.gps_distance_to(Point.new(-8.0572, 40.7563))
           distance.should be_within(0.1).of(113.9)
         end

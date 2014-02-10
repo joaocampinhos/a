@@ -18,9 +18,9 @@ describe Dataset do
 
     it 'should compute nni for a given context' do 
       points = build(:points)
+      context = build(:context)
       @dataset.should_receive(:get_data).and_return(:points)
-      nni = @dataset.compute_nni()
-      
+      nni = @dataset.compute_nni(context)    
     end
 
   end
