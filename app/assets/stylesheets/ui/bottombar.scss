@@ -1,0 +1,21 @@
+.bbar__arrow {
+  background-color: red;
+  width: 100px;
+  height: 100px;
+}
+
+.bbar--active {
+  position: absolute;
+  bottom: 0;
+}
+
+.bbar {
+  min-height: 100px;
+  width: auto;
+}
+
+.bbar__body {
+
+  width: 100%;
+  background-color: blue;
+}

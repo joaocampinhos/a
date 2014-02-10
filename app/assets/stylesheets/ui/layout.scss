@@ -1,0 +1,41 @@
+body {
+  background-color: #f4f4f4;
+  min-height: 100%;
+}
+
+.sidebar {
+  background-color: #1e2426;
+  min-height: 100%;
+  overflow-y: hidden;
+  position: relative;
+}
+
+.indented {
+  padding-left: $half-spacing-unit;
+}
+
+.sidebar .title {
+  color: #c5c6c6;
+}
+
+.overflow--y {
+  overflow-y: auto;
+}
+
+.sidebar hr {
+  border: 1px solid #262f31;
+}
+
+.sidebar li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+//Testing
+
+.active {
+  background-color: #232c2e;
+  a {
+    color: white;
+  }
+}
