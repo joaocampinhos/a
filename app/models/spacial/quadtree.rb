@@ -46,6 +46,10 @@ module Spacial
       end
     end
 
+    def leaf_stats(memo = 0)
+      
+    end
+
     def collisions(point)
       objects = retrieve(point)
       objects.select {|p| p.collides?(point) && p != point }
@@ -53,6 +57,10 @@ module Spacial
 
     def touches?(point)
       @canvas.touches?(point, @radius)
+    end
+
+    def each_leaf
+      
     end
 
   private 
@@ -70,5 +78,6 @@ module Spacial
         end
       end
     end
+
   end
 end
