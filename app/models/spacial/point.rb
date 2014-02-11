@@ -27,7 +27,8 @@ module Spacial
 
     def to_meter 
       rad_point = self.to_rad
-      MERCATOR_PROJECTION.forward(rad_point)
+      meter_point = MERCATOR_PROJECTION.forward(rad_point)
+      Point.new(meter_point.x, meter_point.y)
     end
 
     def box_to_canvas(box, canvas)
@@ -55,6 +56,10 @@ module Spacial
         )
       c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
       EARTH_RADIUS * c
+    end
+
+    def collides?(point, radius = 0)
+      (linear_distance_to(point) - 2*radius) <= 0
     end
 
   end

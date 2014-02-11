@@ -26,6 +26,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'pry'
 gem 'byebug'
+gem 'debugger'
 
 gem 'kdtree'
 gem 'proj4rb'

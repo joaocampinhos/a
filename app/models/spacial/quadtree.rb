@@ -1,8 +1,8 @@
 module Spacial
 
   class Quadtree
-    MAX_OBJECTS = 2
-    MAX_LEVELS = 8
+    MAX_OBJECTS = 10
+    MAX_LEVELS = 9
 
     def initialize(canvas, radius = 0, level = 0)
       @level = level
@@ -17,15 +17,16 @@ module Spacial
     end
 
     def insert(point)
-      unless leaf?
-        distribute(point)
-      end
-      @objects << point
-      if(@objects.size > MAX_OBJECTS)
-        split!
-        @objects.each do |point|
-          distribute(point)
+      if leaf?
+        @objects << point
+        if(@objects.size > MAX_OBJECTS && @level <= MAX_LEVELS)
+          split!
+          @objects.each do |point|
+            distribute(point)
+          end
         end
+      else
+        distribute(point)
       end
     end
 
@@ -37,10 +38,17 @@ module Spacial
       else
         objects = Set.new
         (0...4).each do |index|
-          objects.merge(@nodes[index].retrieve(point))
+          if @nodes[index].touches?(point)
+            objects.merge(@nodes[index].retrieve(point))
+          end
         end
         objects
       end
+    end
+
+    def collisions(point)
+      objects = retrieve(point)
+      objects.select {|p| p.collides?(point) && p != point }
     end
 
     def touches?(point)
