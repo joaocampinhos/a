@@ -1,15 +1,16 @@
 <!--<div ng-controller="StatisticsCtrl">
   <h1>{{message}}</h1>
 </div>-->
+</div>
 <div class="grid"><!--
   Sidebar
-   --><div class="sidebar grid__item one-sixth lap-one-third desk-wide-one-eighth">
+   --><div class="sidebar grid__item one-sixth lap-one-third desk-wide-one-eighth ztop">
         <div ng-controller="sidebarController">
             <h1 class="title side-up soft-half hard-bottom flush">Datasets</h1>
             <hr class="flush side-up">
             <div class="overflow--y" sidebar ng-cloak>
               <ul class="nav nav--stacked push-half--ends">
-                <li ng-class="{active:isActive('/map/{{d.id}}')}" ng-repeat="d in datasets">
+                <li ng-class="{active:isActive("/map/{{d.id}}")}" ng-repeat="d in datasets">
                   <a class="push-half--left" href="/map/{{d.id}}" ng-click="map(d.id)">{{d.name}}</a>
                 </li>
               </ul>
@@ -18,11 +19,10 @@
               <hr class="flush">
               <div class="islet flush">
                 <!-- TODO: import -->
-                <!-- Import dataset button -->
-                <form action="/" method="post">
-                  <input type="file" on-change-file="uploadData" name="myFile"/>
-                  <a class="btn btn--centered btn--primary btn--full">Import Dataset</a>
-                </form>
+                <a ng-click="importData()" class="btn btn--centered btn--primary btn--full">Import Dataset</a>
+                <!--<span class="btn btn--centered btn--primary btn--full btn-file">
+                  Import Dataset <input type="file" ng-file-select="onFileSelect($files)" >
+                </span>-->
               </div>
             </div>
         </div>
@@ -32,6 +32,10 @@
         <div class="grid">
           <div class="grid__item one-whole" ng-controller="mapController">
             <div id="map_canvas" class="map" fullsize></div>
+            <div class="draggable zmid">
+              <div class="top" draggable>topo</div>
+              <div class="content">content</div>
+            </div> 
             <!-- TODO: bottom-bar -->
             <!--
             <div class="bbar bbar--active">

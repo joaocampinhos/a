@@ -169,7 +169,13 @@
 /**
  * Button function modifiers.
  */
-.btn--primary{}
+.btn--primary{
+    color: #fff;
+    background-color: $red;
+    &:hover {
+        background-color: $red-hover;
+    }
+}
 .btn--secondary{}
 .btn--tertiary{}
 
