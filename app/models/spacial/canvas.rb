@@ -11,8 +11,8 @@ module Spacial
     end
 
     def split
-      sub_width = width/2
-      sub_height = height/2
+      sub_width = width/2.0
+      sub_height = height/2.0
       sw = Canvas.new(sub_width, sub_height, Point.new(@origin.x, @origin.y))
       nw = Canvas.new(sub_width, sub_height, Point.new(@origin.x, @origin.y+sub_height))
       ne = Canvas.new(sub_width, sub_height, Point.new(@origin.x+sub_width, @origin.y+sub_height))

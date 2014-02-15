@@ -30,6 +30,7 @@ gem 'debugger'
 
 gem 'kdtree'
 gem 'proj4rb'
+gem 'spreadsheet'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

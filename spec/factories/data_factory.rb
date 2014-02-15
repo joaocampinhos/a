@@ -49,6 +49,26 @@ FactoryGirl.define do
     y 44.5591634
   end
 
+  factory :pt_fit_bottom_left, class: Spacial::Point do 
+    y 36.004673867
+    x -13.4912109375
+  end
+
+  factory :pt_fit_top_right, class: Spacial::Point do 
+    y 42.7873385
+    x -2.50488
+  end
+
+  factory :pt_outer_bottom_left, class: Spacial::Point do 
+    y 32.4912302879
+    x -19.29199218
+  end
+
+  factory :pt_outer_top_right, class: Spacial::Point do 
+    y 46.02748185
+    x 2.6806640625
+  end
+
   factory :uk_bottom_left, class: Spacial::Point do 
     x -22.6318359
     y 47.338822

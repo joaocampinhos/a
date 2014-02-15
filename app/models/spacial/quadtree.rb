@@ -4,6 +4,8 @@ module Spacial
     MAX_OBJECTS = 10
     MAX_LEVELS = 9
 
+    attr_reader :canvas, :nodes, :level, :radius
+
     def initialize(canvas, radius = 0, level = 0)
       @level = level
       @objects = Set.new
@@ -46,6 +48,10 @@ module Spacial
       end
     end
 
+    def nr_objects
+      @objects.size
+    end
+
     def leaf_stats(memo = 0)
       
     end
@@ -60,7 +66,15 @@ module Spacial
     end
 
     def each_leaf
-      
+      if leaf?
+        yield self
+      else
+        @nodes.each do |node|
+          node.each_leaf do |leaf|
+            yield leaf
+          end
+        end
+      end
     end
 
   private 
@@ -72,9 +86,11 @@ module Spacial
     end
 
     def distribute(point)
+      nr_touches = 0
       (0...4).each do |index|
         if(@nodes[index].touches?(point))
           @nodes[index].insert(point)
+          nr_touches +=1
         end
       end
     end
