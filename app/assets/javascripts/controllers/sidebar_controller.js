@@ -1,17 +1,27 @@
 var app = angular.module("spacialAnalysis");
 
-app.controller("sidebarController", function sidebarController($scope, $upload, DatasetService, $location, datasetModal){
-  
+app.controller("sidebarController", function sidebarController($scope, $upload, ContextService, DatasetService, $location, datasetModal){
+
   DatasetService.getAll().then(function(datasets) {
     return $scope.datasets = datasets;
   });
 
-  $scope.importData = function(){
-    datasetModal.activate();
+  $scope.importData = datasetModal.activate;
+  $scope.closeModal = datasetModal.deactivate;
+
+  $scope.isActive = function(route) {
+    return route === $location.path();
   };
 
-  $scope.onFileSelect = function($files) {
-    //$files: an array of files selected, each file has name, size, and type.
+  $scope.map = function(id) {
+    DatasetService.get(id).then(function(dataset) {
+      console.log(dataset);
+      ContextService.mapObj.drawDotLayer(dataset, 1);
+    });
+  };
+
+  $scope.uploadStart = function() {
+    datasetModal.deactivate();
 
     var metas = document.getElementsByTagName('meta');
     var token;
@@ -22,13 +32,11 @@ app.controller("sidebarController", function sidebarController($scope, $upload, 
       }
     }
 
-    for (var i = 0; i < $files.length; i++) {
-      var file = $files[i];
+    for (var i = 0; i < $scope.files.length; i++) {
+      var file = $scope.files[i];
+
       $scope.upload = $upload.upload({
-        url: 'datasets', //upload.php script, node.js route, or servlet url
-        // method: POST or PUT,
-        // headers: {'headerKey': 'headerValue'},
-        // withCredential: true, 
+        url: 'datasets',
 
         headers: {
           'X-CSRF-Token': token
@@ -36,17 +44,19 @@ app.controller("sidebarController", function sidebarController($scope, $upload, 
 
         data: {name: $scope.datasetname, id: $scope.datasetid},
         file: file,
-        // file: $files, //upload multiple files, this feature only works in HTML5 FromData browsers
-        /* set file formData name for 'Content-Desposition' header. Default: 'file' */
-        //fileFormDataName: myFile, //OR for HTML5 multiple upload only a list: ['name1', 'name2', ...]
-        /* customize how data is added to formData. See #40#issuecomment-28612000 for example */
-        //formDataAppender: function(formData, key, val){} //#40#issuecomment-28612000
+
       }).success(function(data, status, headers, config) {
         DatasetService.getAll().then(function(datasets) {
           return $scope.datasets = datasets;
         });
       });
+
     }
+
+  };
+
+  $scope.onFileSelect = function($files) {
+    $scope.files = $files;
   };
 
 });

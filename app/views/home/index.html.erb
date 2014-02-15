@@ -10,8 +10,8 @@
             <hr class="flush side-up">
             <div class="overflow--y" sidebar ng-cloak>
               <ul class="nav nav--stacked push-half--ends">
-                <li ng-class="{active:isActive("/map/{{d.id}}")}" ng-repeat="d in datasets">
-                  <a class="push-half--left" href="/map/{{d.id}}" ng-click="map(d.id)">{{d.name}}</a>
+                <li ng-class="{active:isActive('/{{d.id}}')}" ng-repeat="d in datasets">
+                  <a class="push-half--left" href="#/{{d.id}}" ng-click="map(d.id)">{{d.name}}</a>
                 </li>
               </ul>
             </div>

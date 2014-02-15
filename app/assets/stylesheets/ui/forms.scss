@@ -25,3 +25,19 @@
     cursor: inherit;
     display: block;
 }
+
+input[type=text] {
+  padding: 5px;
+  border: 1px solid #d3cdc9;
+  &:focus {
+    border: 1px solid #b1a69f;
+  }
+}
+
+input {
+  width: 100%;
+  margin-bottom: $half-spacing-unit;
+  &:focus {
+    outline: none;
+  }
+}

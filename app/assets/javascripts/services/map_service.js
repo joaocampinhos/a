@@ -34,6 +34,7 @@ app.factory("Map", function(ContextService, $rootScope) {
     }
 
     Map.prototype.drawDotLayer = function(points, pixelResolution) {
+      console.log(points);
       if (pixelResolution == null) {
         pixelResolution = 0;
       }

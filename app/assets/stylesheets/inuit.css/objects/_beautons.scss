@@ -185,6 +185,9 @@
 .btn--positive{
     background-color:#4A993E;
     color:#fff;
+    &:hover {
+        background-color: lighten(#4A993E, 5);
+    }
 }
 
 /**

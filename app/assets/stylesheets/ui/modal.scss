@@ -4,18 +4,52 @@
  * License: MIT
  */
 
-.btf-modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 50%;
+ .btf-modal {
+
   max-width: 550px;
   min-width: 330px;
-  height: auto;
-  z-index: 2000;
-  -webkit-transform: translateX(-50%) translateY(-50%);
-  -moz-transform: translateX(-50%) translateY(-50%);
-  -ms-transform: translateX(-50%) translateY(-50%);
-  transform: translateX(-50%) translateY(-50%);
-  background-color: #f1f3f5;
+  height: 300px;
+  z-index: 4000;
+
+  background-color: #f7f4f2;
+  border-radius: 2px;
+  padding: 30px 40px;
+  -webkit-box-shadow: rgba(0,0,0,0.4) 0 1px 1px;
+  -moz-box-shadow: rgba(0,0,0,0.4) 0 1px 1px;
+  box-shadow: rgba(0,0,0,0.4) 0 1px 1px;
+
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+
+}
+
+.modal__overlay {
+  z-index: 3500;
+  position: fixed;
+  background-color: rgba(47,51,62,0.7);
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} 
+
+.modal__closebtn {
+  position: absolute;
+  right: 15px;
+  top: 0;
+  font-size: 30px;
+  color: #d3cdc9;
+  
+  &:hover {
+    color: #b1a69f;
+  }
+
+}
+.modal+.grid {
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
 }
