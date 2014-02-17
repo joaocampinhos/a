@@ -1,13 +1,10 @@
 var app = angular.module("spacialAnalysis");
 
-app.controller("sidebarController", function sidebarController($scope, $upload, ContextService, DatasetService, $location, datasetModal){
+app.controller("sidebarController", function sidebarController($scope, ContextService, DatasetService, $location, datasetModal){
 
-  DatasetService.getAll().then(function(datasets) {
-    return $scope.datasets = datasets;
-  });
+  loadDatasets();
 
   $scope.importData = datasetModal.activate;
-  $scope.closeModal = datasetModal.deactivate;
 
   $scope.isActive = function(route) {
     return route === $location.path();
@@ -20,44 +17,13 @@ app.controller("sidebarController", function sidebarController($scope, $upload, 
     });
   };
 
-  $scope.uploadStart = function() {
-    datasetModal.deactivate();
+  $scope.$on('newDataset', loadDatasets);
 
-    var metas = document.getElementsByTagName('meta');
-    var token;
-
-    for (i=0; i<metas.length; i++) {
-      if (metas[i].getAttribute("name") == "csrf-token") {
-        token = metas[i].getAttribute("content");
-      }
-    }
-
-    for (var i = 0; i < $scope.files.length; i++) {
-      var file = $scope.files[i];
-
-      $scope.upload = $upload.upload({
-        url: 'datasets',
-
-        headers: {
-          'X-CSRF-Token': token
-        },
-
-        data: {name: $scope.datasetname, id: $scope.datasetid},
-        file: file,
-
-      }).success(function(data, status, headers, config) {
-        DatasetService.getAll().then(function(datasets) {
-          return $scope.datasets = datasets;
-        });
-      });
-
-    }
-
-  };
-
-  $scope.onFileSelect = function($files) {
-    $scope.files = $files;
-  };
+  function loadDatasets(){
+    DatasetService.getAll().then(function(datasets) {
+      $scope.datasets = datasets;
+    });
+  }
 
 });
 
