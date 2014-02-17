@@ -8,8 +8,12 @@ class Dataset < ActiveRecord::Base
   end
 
   def get_data
-    result = ActiveRecord::Base.connection.execute("select * from #{name}")
-    result.map {|tuple| Spacial::Point.new(latitude: tuple["latitude"].to_f, longitude: tuple["longitude"].to_f)}
+    ActiveRecord::Base.connection.execute("select * from #{name}")
+  end
+
+  def get_point_data
+    data = get_data
+    data.map {|tuple| Spacial::Point.new(latitude: tuple["latitude"].to_f, longitude: tuple["longitude"].to_f)}
   end
 
   def create_table
