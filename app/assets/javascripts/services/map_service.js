@@ -35,7 +35,7 @@ app.factory("Map", function(ContextService, $rootScope) {
 
     Map.prototype.drawDotLayer = function(points, pixelResolution) {
       console.log(points);
-      if (pixelResolution == null) {
+      if (pixelResolution === null) {
         pixelResolution = 0;
       }
       this.bounds = L.latLngBounds([]);
@@ -65,6 +65,7 @@ app.factory("Map", function(ContextService, $rootScope) {
       })(this);
       return this.map.addLayer(this.current_layer);
     };
+
 
     Map.prototype.fitToBounds = function() {
       this.map.fitBounds(this.bounds);
