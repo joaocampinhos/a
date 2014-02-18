@@ -25,12 +25,12 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jbuilder', '~> 1.2'
 
 gem 'pry'
-gem 'byebug'
-gem 'debugger'
+#gem 'byebug'
+#gem 'debugger'
 
 gem 'kdtree'
 
-gem 'proj4rb'
+gem 'proj4rb', '~>0.4.0'
 gem 'spreadsheet'
 
 

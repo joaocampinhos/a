@@ -12,13 +12,16 @@ class DatasetsController < ApplicationController
 
   def create
     dataset = Dataset.create(name: params[:id], label: params[:name])
-    dataset.create_table
-    
-    tuples = SmarterCSV.process(params[:file].path)
-
-    tuples.each { |t| dataset.insert_tuple(t)}
-
+    data = process_data(params[:file])
+    dataset.create_table(data)
     head :ok, content_type: 'text/html'
   end
+
+private
+
+  def process_data(file)
+    SmarterCSV.process(file.path)
+  end
+
 
 end
