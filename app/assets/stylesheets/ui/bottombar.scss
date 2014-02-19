@@ -1,21 +1,20 @@
-.bbar__arrow {
-  background-color: red;
-  width: 100px;
-  height: 100px;
-}
-
-.bbar--active {
-  position: absolute;
-  bottom: 0;
-}
-
 .bbar {
-  min-height: 100px;
-  width: auto;
+  margin: 15px;
+  z-index: 2000;
+  position: relative;
 }
 
 .bbar__body {
-
   width: 100%;
-  background-color: blue;
+  background-color: #f7f4f2;
+  border-radius: 2px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
+     -moz-box-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
+          box-shadow: rgba(0, 0, 0, 0.4) 0 1px 1px;
 }
+
+.bbar__label.menu {
+  margin-bottom: 10px;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.65);
+}
+

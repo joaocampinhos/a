@@ -16,7 +16,6 @@ app.controller('uploadModalController', function($scope, $rootScope, datasetModa
     }
     var file = $scope.files[0];
     var newDataset = {name: $scope.datasetname, id: $scope.datasetid};
-    console.log(newDataset);
     var upload = $upload.upload({
       url: 'datasets',
       headers: {
