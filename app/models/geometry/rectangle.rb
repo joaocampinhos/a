@@ -1,5 +1,4 @@
 module Geometry
-
   class Rectangle
 
     attr_reader :bl, :tr
@@ -44,6 +43,10 @@ module Geometry
 
     def min_x
       bl.x
+    end
+
+    def build_point(x,y)
+      Point.new(x,y)
     end
   end
 end

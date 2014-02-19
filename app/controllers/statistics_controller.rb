@@ -1,7 +1,7 @@
 class StatisticsController < ApplicationController
 
   def index
-    statistics = Statistic.all
+    statistics = [{id: 'nni', name: 'Nearest Neighbour'}, {id: 'pcf', name: 'Pixel Collision Frequency'}]
     render json: statistics
   end
 
