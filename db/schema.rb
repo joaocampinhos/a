@@ -33,12 +33,14 @@ ActiveRecord::Schema.define(version: 20140211085422) do
     t.string   "label"
   end
 
-  create_table "spatial_ref_sys", id: false, force: true do |t|
-    t.integer "srid",                   null: false
-    t.string  "auth_name", limit: 256
-    t.integer "auth_srid"
-    t.string  "srtext",    limit: 2048
-    t.string  "proj4text", limit: 2048
+  create_table "fires", force: true do |t|
+    t.decimal "latitude",  precision: 9, scale: 6
+    t.decimal "longitude", precision: 9, scale: 6
+  end
+
+  create_table "terremotos", force: true do |t|
+    t.decimal "latitude",  precision: 9, scale: 6
+    t.decimal "longitude", precision: 9, scale: 6
   end
 
 end

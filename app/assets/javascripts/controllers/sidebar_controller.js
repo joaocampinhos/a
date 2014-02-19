@@ -14,6 +14,7 @@ app.controller("sidebarController", function sidebarController($scope, ContextSe
     DatasetService.get(id).then(function(dataset) {
       console.log(dataset);
       ContextService.mapObj.drawDotLayer(dataset, 1);
+      ContextService.mapObj.fitToBounds();
     });
   };
 
