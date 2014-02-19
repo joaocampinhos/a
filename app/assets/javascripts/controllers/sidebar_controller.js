@@ -7,13 +7,14 @@ app.controller("sidebarController", function sidebarController($scope, ContextSe
   $scope.importData = datasetModal.activate;
 
   $scope.isActive = function(route) {
-    return route === $location.path();
+    //id tem de ser igual ao id do dataset guardado no context
+    //return route === 
   };
 
   $scope.map = function(id) {
     DatasetService.get(id).then(function(dataset) {
-      console.log(dataset);
       ContextService.mapObj.drawDotLayer(dataset, 1);
+      //TODO: ver este erro do digest
       ContextService.mapObj.fitToBounds();
     });
   };

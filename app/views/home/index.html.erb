@@ -18,11 +18,7 @@
             <div class="importdata side-down">
               <hr class="flush">
               <div class="islet flush">
-                <!-- TODO: import -->
                 <a ng-click="importData()" class="btn btn--centered btn--primary btn--full">Import Dataset</a>
-                <!--<span class="btn btn--centered btn--primary btn--full btn-file">
-                  Import Dataset <input type="file" ng-file-select="onFileSelect($files)" >
-                </span>-->
               </div>
             </div>
         </div>
@@ -35,7 +31,7 @@
             <div class="draggable zmid">
               <div class="top" draggable>topo</div>
               <div class="content">content</div>
-            </div> 
+            </div>
             <!-- TODO: bottom-bar -->
             <!--
             <div class="bbar bbar--active">
@@ -44,6 +40,25 @@
             </div>
             -->
           </div>
+          <div class="bbar">
+              <div class="bbar__label btn btn--centered btn--primary" expand>☰</div>
+              <div class="bbar__body">
+                <div class="grid"><!--
+                  Mudar contexto
+                  --><div class="grid__item one-third" ng-controller="contextDefinition">
+                    <input type="range" value="0" min="0" max="3" step="0.5" ng-model="pixel" ng-change="val()">
+                    <p>{{pixel}}</p>
+                  </div><!--
+                  Contexto atual    
+                  --><div class="grid__item one-third" ng-controller="contextDisplay">
+                    <p><b>Zoom:</b> {{context.map.zoom}}</p>
+                    <p><b>Canvas:</b> width: {{context.map.view.canvasDimensions.width}} height: {{context.map.view.canvasDimensions.height}}</p>
+                  </div><!--
+                  Gráficos
+                  --><div class="grid__item one-third">c</div>
+                </div>
+              </div>
+            </div>
         </div>
       </div>
 </div>

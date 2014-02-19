@@ -73,8 +73,7 @@ app.factory("Map", function(ContextService, $rootScope) {
     };
 
     drawDot = function(x, y, image, context) {
-      var d;
-      d = image.data;
+      var d = image.data;
       d[0] = 255;
       d[1] = 0;
       d[2] = 0;
@@ -108,7 +107,7 @@ app.factory("Map", function(ContextService, $rootScope) {
         latitude: topRight.lat,
         longitude: topRight.lng
       };
-      return ContextService.map.view.origin = map.getPixelOrigin();
+      ContextService.map.view.origin = map.getPixelOrigin();
     };
 
     return Map;
