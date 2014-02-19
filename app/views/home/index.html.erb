@@ -46,11 +46,14 @@
                 <div class="grid"><!--
                   Mudar contexto
                   --><div class="grid__item one-third" ng-controller="contextDefinition">
-                    <input type="range" value="0" min="0" max="3" step="0.5" ngChange="val()">
+                    <input type="range" value="0" min="0" max="3" step="0.5" ng-model="pixel" ng-change="val()">
                     <p>{{pixel}}</p>
                   </div><!--
                   Contexto atual    
-                  --><div class="grid__item one-third">b</div><!--
+                  --><div class="grid__item one-third" ng-controller="contextDisplay">
+                    <p><b>Zoom:</b> {{context.map.zoom}}</p>
+                    <p><b>Canvas:</b> width: {{context.map.view.canvasDimensions.width}} height: {{context.map.view.canvasDimensions.height}}</p>
+                  </div><!--
                   Gráficos
                   --><div class="grid__item one-third">c</div>
                 </div>

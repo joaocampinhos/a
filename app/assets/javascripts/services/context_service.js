@@ -6,7 +6,7 @@ app.factory('ContextService', function() {
     selectedDataSet: {},
     mapObj: null,
     map: {
-      zoom: 0,
+      zoom: 13,
       center: {},
       bounds: {
         bottomLeft: {},

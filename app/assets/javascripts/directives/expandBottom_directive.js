@@ -20,7 +20,6 @@ app.directive('expand', function() {
         element.parent().css("margin-top",-1*element.parent()[0].offsetHeight + "px");
       }
       toggle = !toggle;
-      console.log(toggle);
     });
   };
 });
