@@ -2,10 +2,11 @@
 <div class="modal btf-modal">
   <a href="" ng-click="closeModal()" class="modal__closebtn">×</a>
   <h2 class="push-half--bottom">Import Dataset</h2>
+  <p class="error"> {{modalError}}</p>
   <form>
     <input type="text" ng-model="datasetname" placeholder="Name">
     <input type="text" ng-model="datasetid" placeholder="Identifier">
-    <input type="file" ng-file-select="onFileSelect($files)" >
+    <input type="file" ng-file-select="onFileSelect($files)">
     <input type="submit" class="btn btn--full btn--positive" value="Submit" ng-click="uploadStart()">
   </form>
 </div>

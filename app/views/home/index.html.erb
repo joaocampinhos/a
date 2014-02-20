@@ -10,8 +10,8 @@
             <hr class="flush side-up">
             <div class="overflow--y" sidebar ng-cloak>
               <ul class="nav nav--stacked push-half--ends">
-                <li ng-class="{active:isActive('/{{d.id}}')}" ng-repeat="d in datasets">
-                  <a class="push-half--left" href="#/{{d.id}}" ng-click="map(d.id)">{{d.name}}</a>
+                <li ng-repeat="d in datasets" selected>
+                  <a class="push-half--left" href="" ng-click="map(d.id)">{{d.name}}</a>
                 </li>
               </ul>
             </div>
@@ -54,8 +54,13 @@
                     <p><b>Zoom:</b> {{context.map.zoom}}</p>
                     <p><b>Canvas:</b> width: {{context.map.view.canvasDimensions.width}} height: {{context.map.view.canvasDimensions.height}}</p>
                   </div><!--
-                  Gráficos
-                  --><div class="grid__item one-third">c</div>
+                  Pedir gráficos
+                  --><div class="grid__item one-third" ng-controller="statisticsRequestController">
+                    <select>
+                      <option ng:repeat="item in charts" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                    <button class="btn btn--primary btn--small" ng-click="compute()">Compute</button>
+                  </div>
                 </div>
               </div>
             </div>

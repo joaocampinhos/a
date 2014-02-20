@@ -20,21 +20,28 @@ app.factory("Map", function(ContextService, $rootScope) {
         var map;
         console.log("draged");
         map = this;
-        return $rootScope.$apply(function() {
+        if(!$scope.$$phase) {
+          return $rootScope.$apply(function() {
+            return updateContext(map);
+          });
+        }
+        else
           return updateContext(map);
-        });
       });
       this.map.on("zoomend", function() {
         var map;
         map = this;
-        return $rootScope.$apply(function() {
+        if(!$scope.$$phase) {
+          return $rootScope.$apply(function() {
+            return updateContext(map);
+          });
+        }
+        else
           return updateContext(map);
-        });
       });
     }
 
     Map.prototype.drawDotLayer = function(points, pixelResolution) {
-      console.log(points);
       if (pixelResolution === null) {
         pixelResolution = 0;
       }
@@ -72,6 +79,10 @@ app.factory("Map", function(ContextService, $rootScope) {
       return updateContext(this.map);
     };
 
+    Map.prototype.updateContext = function() {
+      updateContext(this.map);
+    };
+
     drawDot = function(x, y, image, context) {
       var d = image.data;
       d[0] = 255;
@@ -84,7 +95,7 @@ app.factory("Map", function(ContextService, $rootScope) {
     drawCircle = function(x, y, radius, context) {
       context.beginPath();
       context.arc(x, y, radius, 0, Math.PI * 2, false);
-      context.fillStyle = "red";
+      context.fillStyle = "#D63039";
       context.closePath();
       return context.fill();
     };
