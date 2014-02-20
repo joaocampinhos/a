@@ -72,6 +72,10 @@ app.factory("Map", function(ContextService, $rootScope) {
       return updateContext(this.map);
     };
 
+    Map.prototype.updateContext = function() {
+      updateContext(this.map);
+    };
+
     drawDot = function(x, y, image, context) {
       var d = image.data;
       d[0] = 255;
@@ -84,7 +88,7 @@ app.factory("Map", function(ContextService, $rootScope) {
     drawCircle = function(x, y, radius, context) {
       context.beginPath();
       context.arc(x, y, radius, 0, Math.PI * 2, false);
-      context.fillStyle = "red";
+      context.fillStyle = "#D63039";
       context.closePath();
       return context.fill();
     };

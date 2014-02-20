@@ -6,7 +6,10 @@ class StatisticsController < ApplicationController
   end
 
   def show
-    context = build_context(params[:context])
+    obj = JSON.parse(params[:context])
+    #context = build_context(obj)
+    # Trocar a resposta pela informação para gerar o gráfico
+    render json: {"response"=>"success"}
   end
 
 protected

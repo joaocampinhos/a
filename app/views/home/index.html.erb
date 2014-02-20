@@ -54,8 +54,13 @@
                     <p><b>Zoom:</b> {{context.map.zoom}}</p>
                     <p><b>Canvas:</b> width: {{context.map.view.canvasDimensions.width}} height: {{context.map.view.canvasDimensions.height}}</p>
                   </div><!--
-                  Gráficos
-                  --><div class="grid__item one-third">c</div>
+                  Pedir gráficos
+                  --><div class="grid__item one-third" ng-controller="statisticsRequestController">
+                    <select>
+                      <option ng:repeat="item in charts" value="{{item.id}}">{{item.name}}</option>
+                    </select>
+                    <button class="btn btn--primary btn--small" ng-click="compute()">Compute</button>
+                  </div>
                 </div>
               </div>
             </div>

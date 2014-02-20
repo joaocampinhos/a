@@ -1,6 +1,5 @@
 var app = angular.module('spacialAnalysis');
 
-
 app.controller('uploadModalController', function($scope, $rootScope, datasetModal, $upload){
 
   $scope.closeModal = datasetModal.deactivate;

@@ -7,7 +7,6 @@ app.controller("contextDefinition", function($scope, ContextService) {
   $scope.pixel=0;
 
   $scope.val = function() {
-    //Actualizar contexto com este valor
     ContextService.pixelResolution = $scope.pixel;
     //Redesenhar 
   };
