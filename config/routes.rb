@@ -1,5 +1,5 @@
-SpacialAnalysis::Application.routes.draw do
- 
+SpacialAnalysis::Application.routes.draw do 
+
   resources :datasets, only: [:index, :create, :show]
   resources :statistics, only: [:index, :show]
   # The priority is based upon order of creation: first created -> highest priority.

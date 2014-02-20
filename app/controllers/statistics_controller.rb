@@ -7,6 +7,7 @@ class StatisticsController < ApplicationController
 
   def show
     context = build_context(params[:context])
+    render json: []
   end
 
 protected
