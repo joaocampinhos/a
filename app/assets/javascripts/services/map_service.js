@@ -20,21 +20,28 @@ app.factory("Map", function(ContextService, $rootScope) {
         var map;
         console.log("draged");
         map = this;
-        return $rootScope.$apply(function() {
+        if(!$scope.$$phase) {
+          return $rootScope.$apply(function() {
+            return updateContext(map);
+          });
+        }
+        else
           return updateContext(map);
-        });
       });
       this.map.on("zoomend", function() {
         var map;
         map = this;
-        return $rootScope.$apply(function() {
+        if(!$scope.$$phase) {
+          return $rootScope.$apply(function() {
+            return updateContext(map);
+          });
+        }
+        else
           return updateContext(map);
-        });
       });
     }
 
     Map.prototype.drawDotLayer = function(points, pixelResolution) {
-      console.log(points);
       if (pixelResolution === null) {
         pixelResolution = 0;
       }

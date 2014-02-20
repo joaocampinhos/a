@@ -6,11 +6,6 @@ app.controller("sidebarController", function sidebarController($scope, ContextSe
 
   $scope.importData = datasetModal.activate;
 
-  $scope.isActive = function(route) {
-    //id tem de ser igual ao id do dataset guardado no context
-    //return route === 
-  };
-
   $scope.map = function(id) {
     ContextService.selectedDataSet = id;
     DatasetService.get(id).then(function(dataset) {

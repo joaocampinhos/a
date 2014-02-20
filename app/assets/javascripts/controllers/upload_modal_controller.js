@@ -5,6 +5,11 @@ app.controller('uploadModalController', function($scope, $rootScope, datasetModa
   $scope.closeModal = datasetModal.deactivate;
 
   $scope.uploadStart = function(){
+    //Error/required verification
+    if (!$scope.datasetname){ $scope.modalError = "Please enter a name." ; return null; }
+    if (!$scope.datasetid)  { $scope.modalError = "Please enter an id."  ; return null; }
+    if (!$scope.files)      { $scope.modalError = "Please select a file."; return null; }
+
     datasetModal.deactivate();
     var metas = document.getElementsByTagName('meta');
     var token;
@@ -13,6 +18,7 @@ app.controller('uploadModalController', function($scope, $rootScope, datasetModa
         token = metas[i].getAttribute("content");
       }
     }
+
     var file = $scope.files[0];
     var newDataset = {name: $scope.datasetname, id: $scope.datasetid};
     var upload = $upload.upload({
