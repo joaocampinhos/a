@@ -28,17 +28,12 @@
         <div class="grid">
           <div class="grid__item one-whole" ng-controller="mapController">
             <div id="map_canvas" class="map" fullsize></div>
-            <div class="draggable zmid">
-              <div class="top" draggable>topo</div>
-              <div class="content">content</div>
+            <div class="draggable zmid" ng-controller="floatCanvasController">
+              <div class="draggable__top" draggable><p class="flush minimize">Statistics<span hidesib>-</span></p></div>
+              <div class="draggable__content">
+                <canvas chart type="Bar" options="options" data="chart" width="500" height="300"></canvas>
+              </div>
             </div>
-            <!-- TODO: bottom-bar -->
-            <!--
-            <div class="bbar bbar--active">
-              <div class="bbar__arrow">LOG</div>
-              <div class="bbar__body">content</div>
-            </div>
-            -->
           </div>
           <div class="bbar">
               <div class="bbar__label btn btn--centered btn--primary" expand>☰</div>
