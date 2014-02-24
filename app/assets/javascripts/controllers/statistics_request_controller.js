@@ -28,7 +28,7 @@ app.controller("statisticsRequestController", function($scope, StatisticsService
       map: {
         canvas: {
           width: ContextService.map.view.canvasDimensions.width,
-          height: ContextService.map.view.canvasDimensions.width
+          height: ContextService.map.view.canvasDimensions.height
         },
         bounds: {
           bl: {
@@ -42,7 +42,7 @@ app.controller("statisticsRequestController", function($scope, StatisticsService
         }
       },
       visualization: {
-        name: "DotLayer",
+        name: ContextService.visualization,
         params: {
           size: ContextService.pixelResolution
         }

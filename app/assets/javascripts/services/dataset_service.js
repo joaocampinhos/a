@@ -2,7 +2,7 @@ var app = angular.module("spacialAnalysis");
 
 
 app.factory("DatasetService", ["$http", "$q", function($http, $q) {
-  var cache = {};
+  cache = {};
   return {
     getAll: function() {
       return $http({
