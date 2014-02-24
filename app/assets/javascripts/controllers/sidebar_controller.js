@@ -1,6 +1,6 @@
 var app = angular.module("spacialAnalysis");
 
-app.controller("sidebarController", function sidebarController($scope, ContextService, DatasetService, $location, datasetModal){
+app.controller("sidebarController", function sidebarController($scope, $rootScope, ContextService, DatasetService, $location, datasetModal){
 
   loadDatasets();
 
@@ -12,6 +12,7 @@ app.controller("sidebarController", function sidebarController($scope, ContextSe
       ContextService.mapObj.drawDotLayer(dataset, ContextService.pixelResolution);
       ContextService.mapObj.fitToBounds();
     });
+    $rootScope.$broadcast('selected');
   };
 
   $scope.$on('newDataset', loadDatasets);
