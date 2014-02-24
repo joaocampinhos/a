@@ -35,10 +35,9 @@
               </div>
             </div>
           </div>
-          <div id="bottombar" class="bbar" ng-controller="bottomBarController">
+          <div id="bottombar" class="bbar" ng-controller="bottomBarController" ng-style="{ 'margin-top': showBtn ? '-58px' : '' }">
               <div class="bbar__label btn btn--centered btn--primary" expand ng-show="showBtn" ng-click="toggle()">☰</div>
               <div class="bbar__body" id="bbar__body" ng-show="showPnl">
-              <!--<div class="bbar__body hide" id="bbar__body" ng-controller="bottomBarController">-->
                 <a href="" id="bbarclose" class="bbar__body__closebtn" ng-click="toggle()">×</a>
                 <div class="grid"><!--
                   Mudar contexto
