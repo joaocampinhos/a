@@ -41,3 +41,7 @@ input {
     outline: none;
   }
 }
+
+input[type=range] {
+  width: 90%;
+}

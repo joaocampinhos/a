@@ -8,18 +8,11 @@ app.directive("sidebar", function($window) {
     Array.prototype.forEach.call(a, function(el, index, nodeList) {
       b+=el.offsetHeight;
     });
-    if ($window.innerWidth > 480) {
+    var tots = $window.innerHeight - b;
+    element.css("height",tots+"px");
+    w.bind("resize", function () {
       var tots = $window.innerHeight - b;
       element.css("height",tots+"px");
-    }
-    w.bind("resize", function () {
-      if ($window.innerWidth > 480) {
-        var tots = $window.innerHeight - b;
-        element.css("height",tots+"px");
-      }
-      else {
-        element.css("height","");
-      }
     });
   };
 });
