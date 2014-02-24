@@ -2,6 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 require 'proj4'
 require 'spreadsheet'
+require 'kdtree'
 Spreadsheet.client_encoding = 'UTF-8'
 require 'rails/all'
 

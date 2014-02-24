@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"bounds",
+				"bounds_condition"
+			],
+			[
+				"max",
+				"max_y"
+			],
+			[
+				"mer",
+				"mercator_bl"
+			],
+			[
+				"canvas",
+				"canvas_width"
+			],
+			[
+				"merca",
+				"mercator_point"
+			],
+			[
 				"to",
 				"to_mercator"
 			],
@@ -68,19 +88,11 @@
 				"tr_data"
 			],
 			[
-				"bounds",
-				"bounds_context"
-			],
-			[
 				"bou",
 				"bounds_context"
 			],
 			[
 				"cna",
-				"canvas_context"
-			],
-			[
-				"canvas",
 				"canvas_context"
 			],
 			[
@@ -104,58 +116,34 @@
 	"buffers":
 	[
 		{
-			"file": "app/views/home/index.html.erb",
-			"settings":
-			{
-				"buffer_size": 4086,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/spacial/map_bounds.rb",
-			"settings":
-			{
-				"buffer_size": 502,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/context/map.rb",
-			"settings":
-			{
-				"buffer_size": 649,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/assets/javascripts/services/dataset_service.js",
-			"settings":
-			{
-				"buffer_size": 804,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/geometry/gps_point.rb",
-			"settings":
-			{
-				"buffer_size": 1561,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/models/spacial/canvas.rb",
-			"settings":
-			{
-				"buffer_size": 1110,
-				"line_ending": "Unix"
-			}
-		},
-		{
 			"file": "app/controllers/statistics_controller.rb",
 			"settings":
 			{
-				"buffer_size": 2440,
+				"buffer_size": 2509,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/spacial/nni_calculator.rb",
+			"settings":
+			{
+				"buffer_size": 1114,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/statistics/nearest_neighbour_index.rb",
+			"settings":
+			{
+				"buffer_size": 420,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/statistics/statistic.rb",
+			"settings":
+			{
+				"buffer_size": 235,
 				"line_ending": "Unix"
 			}
 		},
@@ -163,7 +151,31 @@
 			"file": "app/models/context/context.rb",
 			"settings":
 			{
-				"buffer_size": 244,
+				"buffer_size": 512,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/context/map.rb",
+			"settings":
+			{
+				"buffer_size": 885,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/spacial/map_bounds.rb",
+			"settings":
+			{
+				"buffer_size": 850,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/models/dataset.rb",
+			"settings":
+			{
+				"buffer_size": 1135,
 				"line_ending": "Unix"
 			}
 		}
@@ -207,37 +219,55 @@
 	},
 	"file_history":
 	[
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/config/boot.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/bin/bundle",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/assets/stylesheets/ui/map.scss",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/map_bounds.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/public/datasetModal.html",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/factories/dataset_factory.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/models/dataset_spec.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/controllers/datasets_controller.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/helpers/datasets_helper.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/controllers/datasets_controller_spec.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/helpers/datasets_helper_spec.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/assets/javascripts/services/dataset_modal.js",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/assets/javascripts/services/dataset_service.js",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/db/migrate/20140209170551_create_datasets.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/db/migrate/20140209223644_add_dataset_to_attribute.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/db/migrate/20140211085422_add_label_to_dataset.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/outer.csv",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/assets/stylesheets/inuit.css/objects/_nav.scss",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/statistics/nearest_neighbour_index.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/config/initializers/numeric_extension.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/statistics/statistic.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/context/context.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/context/map.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/point.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/views/home/index.html.erb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/geometry/rectangle.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/geometry/gps_point.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/canvas.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/controllers/statistics_controller.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/box.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/geometry/point.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/quadtree.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/statistics/pixel_collision_frequency.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/dataset.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/config/database.yml",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/models/dataset_spec.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/models/geometry/geometry_spec.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/geometry/point.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/assets/javascripts/controllers/statistics_request_controller.js",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/statistics/statistic.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/point.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/geometry/gps_point.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/statistics/nearest_neighbour_index.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/geometry/circle.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/context/map.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/context/context.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/config/environments/production.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/map_bounds.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/geometry/rectangle.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/models/geometry/rectangle_spec.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/Rakefile",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/README.rdoc",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/statistic.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/helpers/statistics_helper.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/controllers/statistics_controller.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/factories/attribute_factory.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/config/initializers/inflections.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/outer.csv",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/canvas.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/models/geometry/gps_point_spec.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/db/migrate/20140209171315_create_attributes.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/config/application.rb",
-		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/db/migrate/20140209223644_add_dataset_to_attribute.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/geometry/geometry.rb",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/Gemfile.lock",
 		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/Gemfile",
@@ -280,6 +310,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"NNICalculator",
+			"longitude",
+			"latitude",
+			"longitude",
+			"latitude",
 			"MERCATOR_PROJECTION",
 			"NearestNeighbourIndex",
 			"binding.pry",
@@ -301,46 +336,104 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 7,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "app/views/home/index.html.erb",
+					"file": "app/controllers/statistics_controller.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4086,
+						"buffer_size": 2509,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3791,
-								3791
+								445,
+								445
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Rails/HTML (Rails).tmLanguage",
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 459.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "app/models/spacial/map_bounds.rb",
+					"file": "app/models/spacial/nni_calculator.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 502,
+						"buffer_size": 1114,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								87,
+								87
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/models/statistics/nearest_neighbour_index.rb",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 420,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "app/models/statistics/statistic.rb",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 235,
 						"regions":
 						{
 						},
@@ -361,114 +454,52 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/models/context/map.rb",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 649,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								631,
-								631
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "app/assets/javascripts/services/dataset_service.js",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 804,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								779,
-								779
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "app/models/geometry/gps_point.rb",
+					"file": "app/models/context/context.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1561,
+						"buffer_size": 512,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								51,
-								51
+								371,
+								371
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
+							"syntax": "Packages/Ruby/Ruby.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 51.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
 					"buffer": 5,
-					"file": "app/models/spacial/canvas.rb",
+					"file": "app/models/context/map.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1110,
+						"buffer_size": 885,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								939,
-								939
+								574,
+								574
 							]
 						],
 						"settings":
@@ -486,19 +517,19 @@
 				},
 				{
 					"buffer": 6,
-					"file": "app/controllers/statistics_controller.rb",
+					"file": "app/models/spacial/map_bounds.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2440,
+						"buffer_size": 850,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								908,
-								908
+								654,
+								654
 							]
 						],
 						"settings":
@@ -507,39 +538,41 @@
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
 					"buffer": 7,
-					"file": "app/models/context/context.rb",
+					"file": "app/models/dataset.rb",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 244,
+						"buffer_size": 1135,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								0,
-								0
+								194,
+								194
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Ruby/Ruby.tmLanguage"
+							"syntax": "Packages/Ruby/Ruby.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -592,6 +625,42 @@
 		"selected_items":
 		[
 			[
+				"bounds",
+				"app/models/spacial/map_bounds.rb"
+			],
+			[
+				"map",
+				"app/models/context/map.rb"
+			],
+			[
+				"dataset",
+				"app/models/dataset.rb"
+			],
+			[
+				"conte",
+				"app/models/context/context.rb"
+			],
+			[
+				"nni",
+				"app/models/spacial/nni_calculator.rb"
+			],
+			[
+				"statis",
+				"app/controllers/statistics_controller.rb"
+			],
+			[
+				"contex",
+				"app/models/context/context.rb"
+			],
+			[
+				"map_bo",
+				"app/models/spacial/map_bounds.rb"
+			],
+			[
+				"rec",
+				"app/models/geometry/rectangle.rb"
+			],
+			[
 				"datasetser",
 				"app/assets/javascripts/services/dataset_service.js"
 			],
@@ -602,14 +671,6 @@
 			[
 				"poin",
 				"app/models/geometry/point.rb"
-			],
-			[
-				"map",
-				"app/models/context/map.rb"
-			],
-			[
-				"conte",
-				"app/models/context/context.rb"
 			],
 			[
 				"statisticre",
@@ -625,10 +686,6 @@
 			],
 			[
 				"map_",
-				"app/models/spacial/map_bounds.rb"
-			],
-			[
-				"map_bo",
 				"app/models/spacial/map_bounds.rb"
 			],
 			[
@@ -650,10 +707,6 @@
 			[
 				"index",
 				"app/views/home/index.html.erb"
-			],
-			[
-				"rec",
-				"app/models/geometry/rectangle.rb"
 			],
 			[
 				"gps_po",
@@ -684,10 +737,6 @@
 				"spec/models/geometry/rectangle_spec.rb"
 			],
 			[
-				"contex",
-				"app/models/context/context.rb"
-			],
-			[
 				"statistics",
 				"app/controllers/statistics_controller.rb"
 			],
@@ -705,7 +754,7 @@
 		[
 			[
 				"",
-				"~/Documents/projects/surf-terra-digisensei/st.sublime-project"
+				"~/Documents/projects/internetcarte/alacart.sublime-project"
 			]
 		],
 		"width": 380.0

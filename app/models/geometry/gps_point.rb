@@ -8,7 +8,7 @@ module Geometry
   
     delegate :x, :y, :x=, :y= ,:==, :to_rad, to: :point
     attr_accessor :latitude, :longitude
-
+    attr_reader :point
     alias_method :longitude, :x
     alias_method :latitude, :y
     alias_method :longitude=, :x=
@@ -20,10 +20,10 @@ module Geometry
 
     #destination should respond_to latitude and longitude
     def distance_to(destination)
-      delta_latitude = (destination.latitude - latitude).to_rad
-      delta_longitude = (destination.longitude - longitude).to_rad
-      origin_lat_rad = latitude.to_rad
-      destination_lat_rad = destination.latitude.to_rad
+      delta_latitude = (destination.y - y).to_rad
+      delta_longitude = (destination.x - x).to_rad
+      origin_lat_rad = y.to_rad
+      destination_lat_rad = destination.y.to_rad
       a = Math::sin(delta_latitude/2) * Math::sin(delta_latitude/2) + 
         (Math::sin(delta_longitude/2)* 
         Math::sin(delta_longitude/2) * 
@@ -35,12 +35,18 @@ module Geometry
     end
 
     def to_mercator
-      MERCATOR_PROJECTION.forward(self.to_rad)
+      p = MERCATOR_PROJECTION.forward(self.to_rad)
+      Geometry::Point.new(p.x, p.y)
+    end
+
+    def self.from_mercator(p)
+      rad_point = MERCATOR_PROJECTION.inverse(p)
+      GpsPoint.new(rad_point.x.to_degree, rad_point.y.to_degree)
     end
 
     protected
 
-    attr_reader :point
+    
 
     def init_point(args)
       if args.size == 2

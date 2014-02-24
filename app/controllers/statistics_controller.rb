@@ -10,9 +10,11 @@ class StatisticsController < ApplicationController
     context_data = JSON.parse(params[:context])
     context = build_context(context_data)
     statistic_name = context_data["statistic"]
-    Statistics::Statistic.build(statistic_name, context)
+    statistic = Statistics::Statistic.build(statistic_name, context)
+    stats = statistic.compute
+    #binding.pry
     # Trocar a resposta pela informação pa[ra gerar o gráfico
-    render json: [1,2,3,4,5,6,7,8,9,10]
+    render json: {type: 'value', stats: stats}
   end
 
 protected

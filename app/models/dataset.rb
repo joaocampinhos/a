@@ -1,13 +1,10 @@
 class Dataset < ActiveRecord::Base
   has_many :dataset_attributes, class_name: 'Attribute'
 
-  def compute_nni(context)
-    data = get_data()
-    
-  end
-
-  def get_data
-    ActiveRecord::Base.connection.execute("select * from #{name}")
+  def get_data(predicate = nil)
+    query = "select * from #{name} "
+    query << "where ST_Within(ST_PointFromText('POINT(' || longitude || ' ' || latitude || ')',4326),#{predicate})" if predicate
+    ActiveRecord::Base.connection.execute(query)
   end
 
   def get_point_data

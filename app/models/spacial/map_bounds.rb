@@ -4,13 +4,17 @@ module Spacial
     attr_reader :rectangle
     delegate :min_x, :max_x, :min_y, :max_y, to: :rectangle
     delegate :bl, :tr, to: :rectangle
+    #delegate :area, to: :rectangle
 
     def initialize(rectangle)
       @rectangle = rectangle
     end
 
+    def area
+      width*height
+    end
+
     def width
-      binding.pry
       tr_mercator = tr.to_mercator
       tl_mercator = tl.to_mercator
       tr_mercator.x - tl_mercator.x

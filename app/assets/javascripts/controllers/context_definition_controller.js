@@ -14,7 +14,7 @@ app.controller("contextDefinition", function($scope, ContextService, DatasetServ
     datasetId = ContextService.selectedDataSet;
     DatasetService.get(datasetId).then(function(data){
       ContextService.mapObj.drawDotLayer(data, ContextService.pixelResolution);
-      ContextService.mapObj.fitToBounds();
+      //ContextService.mapObj.fitToBounds();
     });
   };
 });
