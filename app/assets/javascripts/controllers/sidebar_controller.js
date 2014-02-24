@@ -9,8 +9,7 @@ app.controller("sidebarController", function sidebarController($scope, ContextSe
   $scope.map = function(id) {
     ContextService.selectedDataSet = id;
     DatasetService.get(id).then(function(dataset) {
-      ContextService.mapObj.drawDotLayer(dataset, 1);
-      //TODO: ver este erro do digest
+      ContextService.mapObj.drawDotLayer(dataset, ContextService.pixelResolution);
       ContextService.mapObj.fitToBounds();
     });
   };

@@ -1,1 +1,1 @@
-var app = angular.module("spacialAnalysis", ["angularFileUpload", "btford.modal", "angles"]);
+var app = angular.module('spacialAnalysis', ['angularFileUpload', 'btford.modal', 'angles', 'chieffancypants.loadingBar', 'ngAnimate']);

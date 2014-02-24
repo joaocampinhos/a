@@ -4,16 +4,17 @@ app.factory('ContextService', function() {
   return {
     pixelResolution: 0,
     selectedDataSet: null,
+    visualization: "DotLayer",
     mapObj: null,
     map: {
       zoom: 13,
-      center: {}, // Preciso?
+      center: {},
       bounds: {
         bottomLeft: {},
         topRight: {}
       },
       view: {
-        origin: {}, // Preciso?
+        origin: {},
         canvasDimensions: {
           width: 0,
           height: 0
