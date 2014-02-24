@@ -18,16 +18,12 @@ app.directive('expand', function($window) {
 
     //bind on click para mudar essa margem
     element.bind('click',function(){
-      angular.element(document.getElementById("bbar__body")).removeClass("hide");
-      element.addClass("hide menu");
       element.parent().css("margin-top",-1*element.parent()[0].offsetHeight + "px");
       toggle = !toggle;
     });
 
     angular.element(document.getElementById("bbarclose")).bind('click', function() {
-      element.removeClass("hide");
       element.parent().css("margin-top",initstate);
-      angular.element(document.getElementById("bbar__body")).addClass("hide");
       toggle = !toggle;
     });
 
