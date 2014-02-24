@@ -1,0 +1,237 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"vi",
+				"visualization_context"
+			],
+			[
+				"map_",
+				"map_context"
+			],
+			[
+				"conte",
+				"context_data"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 96.0,
+		"selected_items":
+		[
+			[
+				"ruby",
+				"Set Syntax: Ruby"
+			],
+			[
+				"ru",
+				"Set Syntax: Ruby"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/controllers/statistics_controller.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/geometry/rectangle.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/Gemfile",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/models/geometry/rectangle_spec.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/Guardfile",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/context/context.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/spec_helper.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/README.rdoc",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/Rakefile",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/fit.csv",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/tmp/cache/assets/development/sprockets/fa894f407ac23214658157c0d896e288",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/factories/attribute_factory.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spec/factories/geometry/point_factory.rb",
+		"/home/alexd16/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/alexd16/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/config.ru",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/app/models/spacial/statistic.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/config/initializers/secret_token.rb",
+		"/home/alexd16/Documents/projects/thesis/SpacialAnalysis/spacialanalysis.sublime-project",
+		"/home/alexd16/Documents/projects/surf-terra-digisensei/st.sublime-project",
+		"/home/alexd16/.config/sublime-text-3/Packages/User/Distraction Free.sublime-settings",
+		"/home/alexd16/Documents/projects/internetcarte/app/controllers/api/features_controller.rb",
+		"/home/alexd16/Documents/projects/internetcarte/frontend/app/features/features_controller.coffee",
+		"/home/alexd16/Documents/projects/internetcarte/app/controllers/application_controller.rb",
+		"/home/alexd16/Documents/projects/internetcarte/frontend/node_modules/protractor/docs/control-flow.md",
+		"/home/alexd16/Documents/projects/internetcarte/frontend/bower_components/restangular/CONTRIBUTE.md",
+		"/home/alexd16/Documents/projects/internetcarte/config.ru",
+		"/home/alexd16/Documents/projects/internetcarte/frontend/node_modules/lineman/node_modules/grunt-contrib-clean/docs/clean-options.md",
+		"/home/alexd16/Documents/projects/internetcarte/frontend/node_modules/.bin/coffee"
+	],
+	"find":
+	{
+		"height": 25.0
+	},
+	"find_in_files":
+	{
+		"height": 93.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"rectangle"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "spacialanalysis.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"gem",
+				"Gemfile"
+			],
+			[
+				"rectanglesp",
+				"spec/models/geometry/rectangle_spec.rb"
+			],
+			[
+				"recta",
+				"app/models/geometry/rectangle.rb"
+			],
+			[
+				"contex",
+				"app/models/context/context.rb"
+			],
+			[
+				"statistics",
+				"app/controllers/statistics_controller.rb"
+			],
+			[
+				"controller",
+				"app/controllers/api/features_controller.rb"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"~/Documents/projects/internetcarte/alacart.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 187.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

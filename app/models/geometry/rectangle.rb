@@ -3,17 +3,12 @@ module Geometry
 
     attr_reader :bl, :tr
 
-    def initialize(bl_point, tr_point)
-      @bl = bl_point
-      @tr = tr_point
-    end
-
     def tl
-      build_point(bl.x, tr.y)
+      Rectangle.build_point(bl.x, tr.y)
     end
 
     def br
-      build_point(tr.x, bl.y)
+      Rectangle.build_point(tr.x, bl.y)
     end
 
     def area
@@ -22,12 +17,13 @@ module Geometry
       side1 * side2
     end
 
-    alias_method :bottom_left, :bl
-    alias_method :top_right, :tr
-    alias_method :top_left, :tl 
-    alias_method :bottom_right, :br 
+    def width
+      max_x - min_x
+    end
 
-    protected
+    def height
+      max_y - min_y
+    end
 
     def max_y
       tr.y
@@ -45,7 +41,33 @@ module Geometry
       bl.x
     end
 
-    def build_point(x,y)
+    alias_method :bottom_left, :bl
+    alias_method :top_right, :tr
+    alias_method :top_left, :tl 
+    alias_method :bottom_right, :br 
+
+    def self.build_with_dimensions(width: 0, height: 0, origin: nil)
+      bl = origin || Rectangle.build_point(0,0)
+      tr = build_point(bl.x + width, bl.y + height)
+      Rectangle.new(bl, tr)
+    end
+
+    def self.build_with_bounds(bl: nil, tr: nil)
+      Rectangle.new(bl, tr)
+    end
+
+    private
+
+    def initialize(bl_point, tr_point)
+      @bl = bl_point
+      @tr = tr_point
+    end
+
+    def build_rectangle(opts)
+
+    end
+
+    def self.build_point(x,y)
       Point.new(x,y)
     end
   end

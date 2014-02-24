@@ -20,7 +20,7 @@ app.factory("Map", function(ContextService, $rootScope) {
         var map;
         console.log("draged");
         map = this;
-        if(!$scope.$$phase) {
+        if(!$rootScope.$$phase) {
           return $rootScope.$apply(function() {
             return updateContext(map);
           });
@@ -31,7 +31,7 @@ app.factory("Map", function(ContextService, $rootScope) {
       this.map.on("zoomend", function() {
         var map;
         map = this;
-        if(!$scope.$$phase) {
+        if(!$rootScope.$$phase) {
           return $rootScope.$apply(function() {
             return updateContext(map);
           });

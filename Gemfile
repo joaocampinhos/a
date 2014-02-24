@@ -40,7 +40,9 @@ group :doc do
 end
 
 group :development, :test do 
-  gem 'rspec-rails'
+  gem 'rspec-rails', "~>2.14"
+  gem 'guard-rspec', require: false
+  gem 'guard-autorefresh'
   gem "factory_girl_rails", "~> 4.0"
   gem 'pry-rails'
 end

@@ -1,4 +1,5 @@
 class StatisticsController < ApplicationController
+  include Geometry
 
   def index
     statistics = [{id: 'nni', name: 'Nearest Neighbour'}, {id: 'pcf', name: 'Pixel Collision Frequency'}]
@@ -6,19 +7,45 @@ class StatisticsController < ApplicationController
   end
 
   def show
-    obj = JSON.parse(params[:context])
-    #context = build_context(obj)
-    # Trocar a resposta pela informação para gerar o gráfico
-    render json: {"response"=>"success"}
+    context_data = JSON.parse(params[:context])
+    context = build_context(context_data)
+    # Trocar a resposta pela informação pa[ra gerar o gráfico
+    render json: [1,2,3,4,5,6,7,8,9,10]
   end
 
 protected
   def build_context(context_data)
-    map_data = fetch_value(context_data, :map)
-    visualization = fetch_value(context_data, :visualization)
-    dataset_id = fetch_value(context_data, :dataset)
-    
-    Spacial::Context.new
+    map_context = context_data["map"]
+    map = build_map(map_context)
+    visualization_context = context_data["visualization"]
+    visualization = build_visualization(visualization_context)
+    dataset_id = Dataset.find(context_data["dataset"])
+    #Spacial::Context.new(map: map, visualization: visualization, dataset: dataset)
+  end
+
+  def build_map(map_context)
+    canvas_context = map_context["canvas"]
+    canvas = build_canvas(canvas_context)
+    bounds_context = map_context["bounds"]
+    bounds = build_bounds(bounds_context)
+  end
+
+  def build_canvas(canvas_context)
+    binding.pry
+    width = canvas_context["width"]
+    height = canvas_context["height"]
+    Geometry::Rectangle.build_with_dimensions(width: width, height: height)
+  end
+
+  def build_bounds(bounds_context)
+    bl_data = bounds_context["bl"]
+    bl = Geometry::GpsPoint.new(bl_data["longitude"], bl_data["latitude"])
+    tr_data = bounds_context["tr"]
+    tr = Geometry::GpsPoint.new(tr_data["longitude"], tr_data["latitude"])
+    Geometry::Rectangle.build_with_bounds(bl: bl, tr: tr)
+  end
+
+  def build_visualization(visualization_context)
   end
 
   def fetch_value(hash, key)
@@ -26,3 +53,32 @@ protected
   end
 
 end
+
+
+=begin
+{
+  map: {
+    canvas: {
+      width: 1500,
+      height: 900
+    },
+    bounds: {
+      bl: {
+        latitude: -3.564242,
+        longitude: 50.23242
+      },
+      tr: {
+        latitude: -3.564242,
+        longitude: 30.23242
+      }
+    }
+  },
+  visualization: {
+    name: 'DotLayer',
+    params: {
+      size: 1
+    }
+  },
+  dataset: datasetid
+}
+=end
