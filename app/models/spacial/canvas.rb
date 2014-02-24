@@ -1,22 +1,23 @@
 module Spacial
 
   class Canvas
-    
-    attr_accessor :width, :height, :origin
 
-    def initialize(width, height, origin = Point.new(0,0))
-      @width = width
-      @height = height
-      @origin = origin
+
+    attr_reader :rectangle
+    delegate :width, :height, :origin, to: :rectangle
+    delegate :max_x, :max_y, to: :rectangle
+
+    def initialize(rectangle)
+      @rectangle = rectangle
     end
 
     def split
       sub_width = width/2.0
       sub_height = height/2.0
-      sw = Canvas.new(sub_width, sub_height, Point.new(@origin.x, @origin.y))
-      nw = Canvas.new(sub_width, sub_height, Point.new(@origin.x, @origin.y+sub_height))
-      ne = Canvas.new(sub_width, sub_height, Point.new(@origin.x+sub_width, @origin.y+sub_height))
-      se = Canvas.new(sub_width, sub_height, Point.new(@origin.x+sub_width, @origin.y))
+      sw = Canvas.new(build_rectangle(sub_width, sub_height, Point.new(origin.x, origin.y)))
+      nw = Canvas.new(build_rectangle(sub_width, sub_height, Point.new(origin.x, origin.y+sub_height)))
+      ne = Canvas.new(build_rectangle(sub_width, sub_height, Point.new(origin.x+sub_width, origin.y+sub_height)))
+      se = Canvas.new(build_rectangle(sub_width, sub_height, Point.new(origin.x+sub_width, origin.y)))
       [sw, nw, ne, se]
     end
 
@@ -26,18 +27,11 @@ module Spacial
       (point.x + radius) >= origin.x &&
       (point.y + radius) >= origin.y
     end
+    
+    protected
 
-    def project(gps_point)
-      rad_point = gps_point.to_rad
-      MERCATOR_PROJECTION.forward(rad_point)
-    end
-
-    def max_y
-      @origin.y + @height
-    end
-
-    def max_x
-      @origin.x + @width
+    def build_rectangle(width, height, origin)
+      Rectangle.build_with_dimensions(width: width, height: height, origin: origin)
     end
 
   end

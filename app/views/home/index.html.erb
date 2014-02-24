@@ -65,7 +65,7 @@
                   --><div class="grid__item one-third palm-one-whole soft-half--sides" ng-controller="statisticsRequestController">
                     <h6 class="subhead">Compute Statistics</h6>
                     <p class="center">
-                      <select>
+                      <select ng-model="statisticId">
                         <option ng:repeat="item in charts" value="{{item.id}}">{{item.name}}</option>
                       </select>
                     </p>

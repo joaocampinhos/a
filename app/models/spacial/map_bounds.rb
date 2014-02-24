@@ -3,10 +3,31 @@ module Spacial
 
     attr_reader :rectangle
     delegate :min_x, :max_x, :min_y, :max_y, to: :rectangle
-    delegate :bl, :tl, :tr, :br, to: :rectangle
+    delegate :bl, :tr, to: :rectangle
 
     def initialize(rectangle)
       @rectangle = rectangle
+    end
+
+    def width
+      binding.pry
+      tr_mercator = tr.to_mercator
+      tl_mercator = tl.to_mercator
+      tr_mercator.x - tl_mercator.x
+    end
+
+    def height
+      tl_mercator = tl.to_mercator
+      bl_mercator = bl.to_mercator
+      tl_mercator.y - bl_mercator.y
+    end
+
+    def tl
+      Geometry::GpsPoint.new(min_x, max_y)
+    end
+
+    def br
+      Geometry::GpsPoint.new(max_x, min_y)
     end
 
     def query_condition

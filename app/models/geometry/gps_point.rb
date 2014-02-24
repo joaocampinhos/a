@@ -1,9 +1,12 @@
 module Geometry
 
   class GpsPoint
+    include Proj4
+    MERCATOR_PROJECTION = Projection.new("+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +a=6378137 +b=6378137 +towgs84=0,0,0,0,0,0,0 +units=m +no_defs")
+
     EARTH_RADIUS = 6371
   
-    delegate :x, :y, :x=, :y= ,:==, to: :point
+    delegate :x, :y, :x=, :y= ,:==, :to_rad, to: :point
     attr_accessor :latitude, :longitude
 
     alias_method :longitude, :x
@@ -29,6 +32,10 @@ module Geometry
         )
       c = 2 * Math::atan2(Math::sqrt(a), Math::sqrt(1-a))
       EARTH_RADIUS * c
+    end
+
+    def to_mercator
+      MERCATOR_PROJECTION.forward(self.to_rad)
     end
 
     protected

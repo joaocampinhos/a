@@ -9,6 +9,8 @@ class StatisticsController < ApplicationController
   def show
     context_data = JSON.parse(params[:context])
     context = build_context(context_data)
+    statistic_name = context_data["statistic"]
+    Statistics::Statistic.build(statistic_name, context)
     # Trocar a resposta pela informação pa[ra gerar o gráfico
     render json: [1,2,3,4,5,6,7,8,9,10]
   end
@@ -19,8 +21,8 @@ protected
     map = build_map(map_context)
     visualization_context = context_data["visualization"]
     visualization = build_visualization(visualization_context)
-    dataset_id = Dataset.find(context_data["dataset"])
-    #Spacial::Context.new(map: map, visualization: visualization, dataset: dataset)
+    dataset = Dataset.find(context_data["dataset"])
+    Context::Context.new(map: map, visualization: visualization, dataset: dataset)
   end
 
   def build_map(map_context)
@@ -28,13 +30,14 @@ protected
     canvas = build_canvas(canvas_context)
     bounds_context = map_context["bounds"]
     bounds = build_bounds(bounds_context)
+    Context::Map.new(canvas: canvas, map_bounds: bounds)
   end
 
   def build_canvas(canvas_context)
-    binding.pry
     width = canvas_context["width"]
     height = canvas_context["height"]
-    Geometry::Rectangle.build_with_dimensions(width: width, height: height)
+    rectangle = Geometry::Rectangle.build_with_dimensions(width: width, height: height)
+    Spacial::Canvas.new(rectangle)
   end
 
   def build_bounds(bounds_context)
@@ -42,15 +45,23 @@ protected
     bl = Geometry::GpsPoint.new(bl_data["longitude"], bl_data["latitude"])
     tr_data = bounds_context["tr"]
     tr = Geometry::GpsPoint.new(tr_data["longitude"], tr_data["latitude"])
-    Geometry::Rectangle.build_with_bounds(bl: bl, tr: tr)
+    rectangle = Geometry::Rectangle.build_with_bounds(bl: bl, tr: tr)
+    Spacial::MapBounds.new(rectangle)
   end
 
   def build_visualization(visualization_context)
+    name = visualization_context["name"]
+    params = visualization_context["params"]
+    dot_size = params["size"]
+    Visualization.new(name, dot_size: dot_size)
   end
 
   def fetch_value(hash, key)
     hash[key] || hash[key.to_s]
   end
+
+
+  Visualization = Struct.new(:name, :params)
 
 end
 

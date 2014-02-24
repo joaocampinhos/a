@@ -45,6 +45,7 @@ module Geometry
     alias_method :top_right, :tr
     alias_method :top_left, :tl 
     alias_method :bottom_right, :br 
+    alias_method :origin, :bl
 
     def self.build_with_dimensions(width: 0, height: 0, origin: nil)
       bl = origin || Rectangle.build_point(0,0)

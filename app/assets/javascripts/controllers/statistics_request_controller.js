@@ -47,7 +47,8 @@ app.controller("statisticsRequestController", function($scope, StatisticsService
           size: ContextService.pixelResolution
         }
       },
-      dataset: ContextService.selectedDataSet
+      dataset: ContextService.selectedDataSet,
+      statistic: $scope.statisticId
     };
   }
 
