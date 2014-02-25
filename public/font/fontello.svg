@@ -1,0 +1,14 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg">
+<metadata>Copyright (C) 2014 by original authors @ fontello.com</metadata>
+<defs>
+<font id="fontello" horiz-adv-x="1000" >
+<font-face font-family="fontello" font-weight="400" font-stretch="normal" units-per-em="1000" ascent="850" descent="-150" />
+<missing-glyph horiz-adv-x="1000" />
+<glyph glyph-name="chart-bar" unicode="&#xe802;" d="m286 279v-215h-143v215h143z m214 285v-500h-143v500h143z m214-143v-357h-143v357h143z m215 215v-572h-143v572h143z m71-625v678q0 8-5 13t-13 5h-893q-7 0-12-5t-6-13v-678q0-8 6-13t12-5h893q7 0 13 5t5 13z m71 678v-678q0-37-26-63t-63-27h-893q-36 0-63 27t-26 63v678q0 37 26 63t63 27h893q37 0 63-27t26-63z" horiz-adv-x="1071.4" />
+<glyph glyph-name="chart-pie" unicode="&#xe800;" d="m368 770l0-368l-368 0q18 146 121 249t247 119z m106 0q156-20 261-139t105-279q0-174-123-298t-299-124q-160 0-278 105t-140 263l424 0q20 0 35 14t15 36l0 422z" horiz-adv-x="840" />
+<glyph glyph-name="chart-line" unicode="&#xe801;" d="m34 284q-42 10-32 56q10 42 54 32l98-24l-52-80z m890-12q14 12 33 11t31-15q32-32-2-64l-252-226q-12-12-30-12q-14 0-28 10l-286 220l-54 14l50 80l36-8q12-4 16-8l264-204z m-490 220l-350-550q-12-22-38-22q-12 0-24 8q-16 10-20 29t6 33l374 588q8 16 28 20q18 6 36-6l246-156l226 326q10 16 28 19t34-9q38-24 12-62l-252-362q-24-36-62-12z" horiz-adv-x="1003" />
+</font>
+</defs>
+</svg>
