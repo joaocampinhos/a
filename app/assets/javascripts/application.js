@@ -9,5 +9,6 @@
 //
 // Read Sprockets README (https://github.com/sstephenson/sprockets#sprockets-directives) for details
 // about supported directives.
+//= require_directory ./lib
 //= require app
 //= require_tree .

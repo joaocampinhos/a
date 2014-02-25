@@ -53,6 +53,7 @@ module Spacial
     end
 
     def leaf_stats(memo = 0)
+      {}
     end
 
     def collisions(point)
