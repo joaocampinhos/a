@@ -71,7 +71,7 @@ app.controller("floatCanvasController", function($scope) {
     return charts;
   }
 
-  function nvd_format_value_stats(stats){
+  function nvdFormatValueStats(stats){
     var labels = _.sortBy(_.keys(stats), function(label){return parseFloat(label);});
     var values = _.map(labels, function(label){
       return [parseFloat(label), stats[label]];
