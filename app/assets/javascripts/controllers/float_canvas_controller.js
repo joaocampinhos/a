@@ -18,7 +18,15 @@ app.controller("floatCanvasController", function($scope) {
     console.log('Chart Draw');
     $scope.showBtn = true;
     $scope.template = '/charts/'+result.type+'.html';
-    $scope.chart = nvd_format_value_stats(result.stats);
+    $scope.name = result.name;
+    switch(result.type){
+      case 'value':
+        $scope.chart = nvdFormatValueStats(result.stats);
+      break;
+      case 'frequency':
+        $scope.charts = nvdFormatFrequencyStats(result.stats);
+      break;
+    }
   });
 
   $scope.yAxisThickFormat = function(){
@@ -36,12 +44,29 @@ app.controller("floatCanvasController", function($scope) {
     return { labels: labels, datasets: [ { fillColor : "#a5a7a8", data: values } ] };
   }
 
-  function format_frequency_stats(stats){
-
+  function nvdFormatFrequencyStats(stats){
+    var charts = []
+    var radius_values = _.keys(stats);
+    _.each(radius_values, function(radius){
+      var stat = stats[radius];
+      var labels = _.sortBy(_.keys(stat), function(label){return parseFloat(label)});
+      var chart = _.map(labels, function(label){
+        return [label, stat[label]]
+      });
+      charts.push([{key: radius, values: chart}]);
+    })
+    console.log(stats);
+    console.log(charts);
+    return charts;
   }
 
+<<<<<<< HEAD
   function nvd_format_value_stats(stats){
     var labels = _.sortBy(_.keys(stats), function(label){return parseFloat(label);});
+=======
+  function nvdFormatValueStats(stats){
+    var labels = _.sortBy(_.keys(stats), function(label){return parseFloat(label)});
+>>>>>>> 3c59d8431e0bc9129351173fd02fd4920a529c26
     var values = _.map(labels, function(label){
       return [parseFloat(label), stats[label]];
     });
