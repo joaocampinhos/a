@@ -22,6 +22,17 @@ app.controller("floatCanvasController", function($scope) {
     }
   }
 
+  $scope.xAxisThickFormat = function(chart){
+    return function(val){
+      if((parseInt(val) % 10) == 0){
+        return val;
+      }else{
+        return '';
+      }
+      
+    }
+  }
+
   function format_value_stats(stats){
     var labels = _.sortBy(_.keys(stats), function(label){return parseFloat(label)});
     var values = []
@@ -40,7 +51,7 @@ app.controller("floatCanvasController", function($scope) {
       var chart = _.map(labels, function(label){
         return [label, stat[label]]
       });
-      charts.push([{key: radius, values: chart}]);
+      charts.push({key: radius, values: chart});
     })
     console.log(stats);
     console.log(charts);

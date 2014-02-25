@@ -1,15 +1,14 @@
- <div style="width: 1500px; max-height: 700px; overflow-y: auto;">
-  <div ng-repeat="chart in charts" class="grid__item one-third">
-    <nvd3-multi-bar-chart
-        data="chart"
-          width="450"
-          height="450"
-          margin="{left: 100}"
-          showYAxis="true"
-          showXAxis="true"
-          yAxisTickFormat= "yAxisThickFormat()"
-          >
-            <svg></svg>
-    </nvd3-multi-bar-chart>
-  </div>
-</div>
+<nvd3-multi-bar-chart
+data="charts"
+  width="1200"
+  height="700"
+  margin="{left: 100}"
+  showYAxis="true"
+  showXAxis="true"
+  showLegend="true"
+  showControls="true"
+  yAxisTickFormat= "yAxisThickFormat()"
+  xAxisTickFormat= "xAxisThickFormat()"
+  >
+    <svg></svg>
+</nvd3-multi-bar-chart>
