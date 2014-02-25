@@ -1,6 +1,6 @@
 var app = angular.module("spacialAnalysis");
 
-app.controller("statisticsRequestController", function($scope, StatisticsService, ContextService) {
+app.controller("statisticsRequestController", function($scope, $rootScope, StatisticsService, ContextService) {
 
   // GET todos os tipos de gráficos que podemos pedir
   loadChartTypes();
@@ -14,6 +14,7 @@ app.controller("statisticsRequestController", function($scope, StatisticsService
       //Fazer broadcast da resposta para o controlador que vai desenhar o gráfico
       //...  
       console.log(res);
+      $rootScope.$broadcast('statisticLoaded', res)
     });
   };
 

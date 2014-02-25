@@ -22,7 +22,7 @@ module Statistics
       distances_by_radius.each do |radius, sum_distance|
         nni_by_radius[radius] = nni(sum_distance)
       end
-      nni_by_radius
+      {name: 'Nearest Neighbour Index', stats: nni_by_radius, type: 'value'}
     end
 
     protected

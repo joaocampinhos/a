@@ -6,6 +6,8 @@ module Statistics
         NearestNeighbourIndex.new(context)
       when 'pcf'
         PixelCollisionFrequency.new(context)
+      when 'qlf'
+        QuadLeafFrequency.new(context)
       end
     end
   end

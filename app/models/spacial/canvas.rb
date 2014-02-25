@@ -31,7 +31,7 @@ module Spacial
     protected
 
     def build_rectangle(width, height, origin)
-      Rectangle.build_with_dimensions(width: width, height: height, origin: origin)
+      Geometry::Rectangle.build_with_dimensions(width: width, height: height, origin: origin)
     end
 
   end

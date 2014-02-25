@@ -2,7 +2,7 @@ class StatisticsController < ApplicationController
   include Geometry
 
   def index
-    statistics = [{id: 'nni', name: 'Nearest Neighbour'}, {id: 'pcf', name: 'Pixel Collision Frequency'}]
+    statistics = [{id: 'nni', name: 'Nearest Neighbour'}, {id: 'qlf', name: 'QuadTree\'s Leaf Objects Frequency'}]
     render json: statistics
   end
 
@@ -14,7 +14,7 @@ class StatisticsController < ApplicationController
     stats = statistic.compute
     #binding.pry
     # Trocar a resposta pela informação pa[ra gerar o gráfico
-    render json: {type: 'value', stats: stats}
+    render json: stats
   end
 
 protected

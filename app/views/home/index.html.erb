@@ -31,7 +31,7 @@
             <div id="draggable" class="draggable zmid hide" ng-controller="floatCanvasController">
               <div class="draggable__top" draggable><p class="flush minimize">Statistics<span hidesib>-</span></p></div>
               <div class="draggable__content">
-                <canvas chart type="Bar" options="options" data="chart" width="500" height="300"></canvas>
+                <div ng-include="template"></div>
               </div>
             </div>
           </div>

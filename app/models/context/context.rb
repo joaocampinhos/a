@@ -16,6 +16,10 @@ module Context
       map.canvas_to_map(p)
     end
 
+    def canvas
+      map.canvas
+    end
+
     def area
       map.area
     end
