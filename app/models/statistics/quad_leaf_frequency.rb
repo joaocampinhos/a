@@ -18,8 +18,7 @@ module Statistics
       trees.map do |radius, tree|
         frequency_by_radius[radius] = leaf_frequency(tree)
       end
-      binding.pry
-      {name: 'Quad Leaf Frequency',type: 'frequency', stats: {0 => 12, 1 => 31, 2=> 41} }
+      {name: 'Quad Leaf Frequency',type: 'frequency', stats: frequency_by_radius }
     end
 
     def leaf_frequency(tree)

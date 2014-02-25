@@ -29,7 +29,7 @@
           <div class="grid__item one-whole" ng-controller="mapController">
             <div id="map_canvas" class="map" fullsize></div>
             <div id="draggable" class="draggable zmid hide" ng-controller="floatCanvasController">
-              <div class="draggable__top" draggable><p class="flush minimize">Statistics<span hidesib>-</span></p></div>
+              <div class="draggable__top" draggable><p class="flush minimize">Statistics {{name}}<span hidesib>-</span></p></div>
               <div class="draggable__content">
                 <div ng-include="template"></div>
               </div>
