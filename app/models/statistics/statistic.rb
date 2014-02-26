@@ -8,6 +8,10 @@ module Statistics
         PixelCollisionFrequency.new(context)
       when 'qlf'
         QuadLeafFrequency.new(context)
+      when 'qbd'
+        QuadObjectsDistribution.new(context)
+      when 'oqf'
+        ObjectsByQuadleaf.new(context)
       end
     end
   end

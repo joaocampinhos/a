@@ -2,7 +2,7 @@ class DatasetsController < ApplicationController
 
 
   def index 
-    render json: Dataset.select("id, name")
+    render json: Dataset.select("id, name, label")
   end
 
   def show 
@@ -11,7 +11,7 @@ class DatasetsController < ApplicationController
   end
 
   def create
-    dataset = Dataset.create(name: params[:id], label: params[:name])
+    dataset = Dataset.create(name: params[:name], label: params[:id])
     data = process_data(params[:file])
     dataset.create_table(data)
     head :ok, content_type: 'text/html'

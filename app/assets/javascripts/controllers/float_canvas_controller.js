@@ -21,10 +21,13 @@ app.controller("floatCanvasController", function($scope) {
     $scope.name = result.name;
     switch(result.type){
       case 'value':
-        $scope.chart = nvdFormatValueStats(result.stats);
+      $scope.chart = nvdFormatValueStats(result.stats);
       break;
       case 'frequency':
-        $scope.charts = nvdFormatFrequencyStats(result.stats);
+      $scope.charts = nvdFormatFrequencyStats(result.stats);
+      break;
+      case 'distribution':
+      $scope.charts = nvdFormatDistributionStats(result.stats);
       break;
     }
   });
@@ -37,12 +40,7 @@ app.controller("floatCanvasController", function($scope) {
 
   $scope.xAxisThickFormat = function(chart){
     return function(val){
-      if((parseInt(val) % 10) == 0){
-        return val;
-      }else{
-        return '';
-      }
-      
+      return val;
     }
   }
 
@@ -57,7 +55,7 @@ app.controller("floatCanvasController", function($scope) {
 
   function nvdFormatFrequencyStats(stats){
     var charts = []
-    var radius_values = _.keys(stats);
+    var radius_values = _.sortBy(_.keys(stats), function(radius){return parseFloat(radius)});
     _.each(radius_values, function(radius){
       var stat = stats[radius];
       var labels = _.sortBy(_.keys(stat), function(label){return parseFloat(label)});
@@ -77,5 +75,20 @@ app.controller("floatCanvasController", function($scope) {
       return [parseFloat(label), stats[label]];
     });
     return [{key: stats.name, values: values}];
+  }
+
+
+  function nvdFormatDistributionStats(stats){
+    var charts = []
+    var radius_values = _.sortBy(_.keys(stats), function(radius) { return parseFloat(radius)});
+    _.each(radius_values, function(radius){
+      var stat = stats[radius];
+      var distribution = [];
+      _.each(stat, function(elem, index){
+        distribution.push([index, elem]);
+      })
+      charts.push({key: radius, values: distribution});
+    })
+    return charts;
   }
 });

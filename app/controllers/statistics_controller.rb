@@ -2,7 +2,11 @@ class StatisticsController < ApplicationController
   include Geometry
 
   def index
-    statistics = [{id: 'nni', name: 'Nearest Neighbour'}, {id: 'qlf', name: 'QuadTree\'s Leaf Objects Frequency'}]
+    statistics = [
+      {id: 'nni', name: 'Nearest Neighbour'}, 
+      {id: 'qlf', name: 'QuadTree\'s objects by nrº leafs Objects Frequency'},
+      {id: 'oqf', name: 'Objects By Quadtree leaf'}
+    ]
     render json: statistics
   end
 

@@ -18,6 +18,7 @@ module Statistics
       trees.map do |radius, tree|
         frequency_by_radius[radius] = leaf_frequency(tree)
       end
+      max_size = frequency_by_radius.values.reduce(0) {|memo, dist| dist.size > memo ? dist.size : memo}
       {name: 'Quad Leaf Frequency',type: 'frequency', stats: frequency_by_radius }
     end
 
